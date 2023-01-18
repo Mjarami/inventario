@@ -1,0 +1,38 @@
+{
+    "__Nombre_BD__": "inventario",
+    "collection": [
+        {
+            "nombre": "usuarios",
+            "campos": [
+                {
+                    "Id": "Id",
+                    "nombre": "nombre",
+                    "usuario": "usuario",
+                    "clave": "clave",
+                    "telefonos": [],
+                    "niveles": [
+                        "admin",
+                        "user"
+                    ],
+                    "direccion": [],
+                    "foto": "foto",
+                    "estado": [
+                        "activo",
+                        "inactivo"
+                    ],
+                    "fecha_creacion": "fecha",
+                    "productos": [
+                        {
+                            "id": "id",
+                            "nombre": "nombre",
+                            "precio": "precio",
+                            "descripcion": "descripcion",
+                            "foto": "foto",
+                            "categorias": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
