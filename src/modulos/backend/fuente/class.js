@@ -1,17 +1,3 @@
-//Iniciar servidor
-class Servidor {
-  constructor() {
-    const express = require("express");
-    const app = express();
-    app.get("/", (req, res) => {
-      res.send("<H1> Hola Mundo </H1>");
-      res.end();
-    });
-    app.set("port", process.env.PORT || 3000);
-    app.listen(app.get("port"), () => console.log(`server on port ${app.get("port")}`));
-  }
-}
-
 //Constructores
 class Personas {
   #id;
@@ -125,8 +111,7 @@ class Categorias {
   }
 }
 
-const servidor = new Servidor();
 const persona = new Personas();
 const producto = new Productos();
 const categoria = new Categorias();
-module.exports = { servidor, persona, producto, categoria};
+module.exports = { persona, producto, categoria};
