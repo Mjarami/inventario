@@ -1,4 +1,4 @@
-class Router {
+class crudUser {
     constructor(){
         const express = require("express");
         const router = express.Router();
@@ -38,8 +38,9 @@ class Router {
             console.log(req.params.id);
             res.json({status: 'Usuario eliminado'});
         });
-        module.exports = router;
+        return router;
     }
 }
 
-const ruta = new Router();
+const ruta = new crudUser();
+module.exports = ruta;

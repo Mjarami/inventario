@@ -7,6 +7,7 @@ class ConectaBD {
         mongoose.connect("mongodb://127.0.0.1:27017/sprun")
             .then(db => console.log("DB is conected"))
             .catch(err => console.error(err));
+        return mongoose;
     }
 }
 
@@ -15,7 +16,7 @@ class Usuarios {
     constructor(){
         const mongoose  = require ("mongoose");
         const { schema } = mongoose;
-        new Schema({
+        const estructuraUsuario = new Schema({
             codigo:{type: String, required: true},
             fechaCreacion: {type: String, required: true},
             nombre: {type: String, required: true},
@@ -26,7 +27,7 @@ class Usuarios {
             direccion: {type: Array},
             foto: {type: String},
             estado: {type: String, required: true},
-            productos: {type: String}
+            productos: {type: Array}
             /*
             productos:[
                 {
@@ -47,6 +48,7 @@ class Usuarios {
             ]
             */
         });
+        return estructuraUsuario;
     }
 }
 

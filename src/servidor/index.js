@@ -12,12 +12,6 @@ class Servidor {
       app.use(express.json());
       const rutas = require("../modulos/backend/fuente/rutas/define_ruta.js");
       app.use('/api/users', rutas);
-      /*
-      app.get("/", (req, res) => {
-        res.send("<H1> Hola Mundo </H1>");
-        res.end();
-      });
-      */
       app.use(express.static(path.join(__dirname, "public")));
       app.listen(app.get("port"), () => console.log(`server on port ${app.get("port")}`));
     }
