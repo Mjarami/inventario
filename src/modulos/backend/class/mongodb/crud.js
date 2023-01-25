@@ -38,6 +38,9 @@ class crudUser {
             if (objetoVacio(consultaUser) === true){
                 consultaUser = await estructura.find({"estatus": `${req.params.id}`})
             }
+            if (objetoVacio(consultaUser) === true){
+                consultaUser = await estructura.findById(req.params.id);
+            }
             console.log(consultaUser);
             res.json(consultaUser);
         });
@@ -96,6 +99,9 @@ class crudProducts {
             if (objetoVacio(consultaProducto) === true){
                 consultaProducto = await estructura.find({"categorias": `${req.params.id}`});
             }
+            if (objetoVacio(consultaProducto) === true){
+                consultaProducto = await estructura.findById(req.params.id);
+            }
             console.log(consultaProducto);
             res.json(consultaProducto);
         });
@@ -144,6 +150,9 @@ class crudCategories {
             consultaCategory = await estructura.find({"codigo": `${req.params.id}`});
             if (objetoVacio(consultaCategory) === true){
                 consultaCategory = await estructura.find({"nombre": `${req.params.id}`});
+            }
+            if (objetoVacio(consultaCategory) === true){
+                consultaCategory = await estructura.findById(req.params.id);
             }
             console.log(consultaCategory);
             res.json(consultaCategory);
@@ -194,6 +203,9 @@ class crudEstatus {
             if (objetoVacio(consultaStatus) === true){
                 consultaStatus = await estructura.find({"nombre": `${req.params.id}`});
             }
+            if (objetoVacio(consultaStatus) === true){
+                consultaStatus = await estructura.findById(req.params.id);
+            }
             console.log(consultaStatus);
             res.json(consultaStatus);
         });
@@ -242,6 +254,9 @@ class crudNiveles {
             consultaLevel = await estructura.find({"codigo": `${req.params.id}`});
             if (objetoVacio(consultaLevel) === true){
                 consultaLevel = await estructura.find({"nombre": `${req.params.id}`});
+            }
+            if (objetoVacio(consultaLevel) === true){
+                consultaLevel = await estructura.findById(req.params.id);
             }
             console.log(consultaLevel);
             res.json(consultaLevel);
